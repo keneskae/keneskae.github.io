@@ -1,0 +1,125 @@
+@font-face {
+	font-family: CooperSB;
+	src: url(fonts/coopstdblk.woff) format('woff'),
+		url(fonts/coopstdblk.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: CooperSBOutline;
+  src: url(fonts/CooperBlackOutline.woff) format('woff'),
+      url(fonts/CooperBlackOutline.ttf) format('truetype');
+}
+
+@keyframes bobStill {
+	0% {
+		transform: translatey(0px);
+		letter-spacing: calc(3.74vw - 3rem);
+	}
+	50% {
+		transform: translatey(-1vw);
+		letter-spacing: calc(3.84vw - 3rem);
+	}
+	100% {
+		transform: translatey(0px);
+		letter-spacing: calc(3.74vw - 3rem);
+	}
+}
+
+#wrapper {
+	width: 70%; /*specify a width*/
+	margin: 0 auto; /* center */
+}
+
+
+body {
+	background-color: navajoWhite;
+}
+
+a {text-decoration: none;}/* no underline */
+a:link {color:ivory; opacity: 0.75;}    /* normal link */
+a:visited {color:#50afe5; opacity: 0.75;} /* visited link */
+a:hover {color:#fe0000; opacity: 0.75;}   /* mouse over link */
+a:active {color:ivory; opacity: 0.75;}   /* selected link */
+
+
+.parent {
+
+  display: grid;
+  place-items: center;
+  font-family: CooperSB, CooperSBOutline;
+}
+
+.kenkeiso {
+
+	left: 50%;
+	padding-top: 35vh;
+  mix-blend-mode: multiply;
+
+  letter-spacing: calc(3.74vw - 3rem);
+  font-size: calc(90px + (140 - 90) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+
+  animation: bobStill 6s ease-in-out infinite;
+}
+
+.kenkeiso span{
+	color: orangeRed;
+	opacity: 0.75;
+
+.menuitemsParent {
+	  display: flex;
+	  flex-wrap: wrap;
+		text-align: center;
+	}
+
+.menuitems {
+
+	  flex: 1 1 100px;
+    padding: 5px;
+		font-size: calc(15px + (25 - 15) * ((100vw - 15px) / (1600 - 300)));
+	  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 15px)/(1600 - 300)));
+	  text-align: center;
+	}
+}
+
+.button{
+	font-family: CooperSB, CooperSBOutline;
+	border: none;
+  background-color: inherit;
+	font-size: calc(15px + (25 - 15) * ((100vw - 15px) / (1600 - 300)));
+	line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 15px)/(1600 - 300)));
+	color: ivory;
+	opacity: 0.75;
+	cursor: pointer;
+	outline: none;
+}
+
+.button:hover{
+  text-shadow:0px 6px rgba(0,0,0,0.3);
+	transition: 0.5s;
+	outline: none;
+}
+
+.button:active{
+	opacity: 0.5;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
