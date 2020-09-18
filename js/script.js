@@ -8,10 +8,21 @@ $(document).ready(function() {
   {
 	element.style.color = fontColour[randColour];
   });
-
+document.getElementsByClassName("button")[0].style.color = fontColour[randColour];
+document.getElementsByClassName("button")[1].style.color = fontColour[randColour];
+document.getElementsByClassName("button")[2].style.color = fontColour[randColour];
 });
 
-document.getElementsByClassName("button")[0].style.color = fontColour[randColour];
+
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied";
+}
 
 function on() {
   document.getElementById("overlay").style.display = "block";
